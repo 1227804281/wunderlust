@@ -1,1 +1,1100 @@
-/* hi. i hope youre having a good day. thanks for the awesome class. yay */
+/* CSS (other than the reset) by Allen Jordan*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* additional reset */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+select {
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+}
+
+
+/* global styles */
+:root {
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-gray: #222222;
+    --light-gray: #EAEAEA;
+    --white: #fff;
+    --black: #000;
+}
+
+h1, h2, h3 {
+    font-family: 'Molle', cursive;
+    color: var(--black);
+}
+
+h2, h3 {
+    font-size: 2em;
+}
+
+h3 {
+    margin-left: .75em;
+}
+
+
+h4, p, q, small, nav, button, form {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--black);
+}
+
+h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+} 
+
+/* sr styles */
+#skip, .sr-only {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#skip:focus {
+    position: static;
+    width: auto;
+    height: auto;
+}
+
+/* header styles */
+header {
+    background: linear-gradient(var(--teal), var(--white));
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 0.5em 0 0 0.75em;
+}
+
+header p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-left: 1.5em;
+}
+
+#logo img{
+    display: block;
+    width: 45%;
+}
+
+/* menu untoggled*/
+#menu-toggle {
+    position: absolute;
+    top: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    justify-items: center;
+}
+
+#menu-toggle input {
+    opacity: 0%;
+}
+
+#menu-toggle label {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: var(--yellow);
+    width: 50%;
+    right: 0;
+    height: 2.5em;
+    transition: all 0.3s ease;
+}
+
+#menu-toggle a {
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--black);
+    transition: color 0.3s ease;
+}
+
+#menu-toggle a:hover {
+    color: var(--white)
+}
+
+#menu-toggle ul {
+    position: absolute;
+    right: -10000px;
+    opacity: 0;
+    width: 100%;
+    top: 2.5em;
+    transition: opacity 0.3s,
+    color 0.3s;
+}
+
+#menu-toggle li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--teal);
+    height: 7em;
+    border: 1px solid var(--black);
+}
+
+#menu-toggle li:last-of-type {
+    border-bottom: 2px solid var(--black);
+}
+
+/* menu toggled*/
+
+#menu-toggle input:checked ~ label {
+    width: 100%;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+#menu-toggle input:checked ~ ul {
+    right: 0;
+    opacity: 100%;
+}
+
+/* intro section */
+
+#intro {
+    margin-top: 4em;
+}
+
+#intro h2 {
+    margin-left: 0.75em;
+}
+
+#intro p {
+    margin: 0.75em 1.5em 0 1.5em;
+    line-height: 1.75;
+}
+
+#img-grid {
+    margin: 1em 0 1em 0;
+}
+
+#img-grid img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.75em;
+}
+
+/* plan section */
+
+#plan {
+    padding-top: 1.75em;
+    background-color: var(--yellow);
+}
+
+#plan h4 {
+    font-size: 1.15em;
+    padding: 20px 0;
+}
+
+#plan div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em;
+}
+
+#plan img {
+    width: 145px;
+}
+
+#plan img[src="images/stay.svg"] {
+    padding-top: 20px;
+    width: 160px;
+}
+
+#plan img[src="images/eat.svg"] {
+    width: 125px;
+}
+
+#plan section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--teal);
+    width: 250px;
+    border-radius: 3%;
+    border: solid 3px var(--white);
+    height: 240px;
+    margin-bottom: 1em;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#plan section:hover {
+    background-color: var(--purple);
+}
+
+/* testimonials section */
+
+#testimonials h3 {
+    padding-top: 1em;
+}
+
+#testimonials h4 {
+    font-size: 1.5em;
+}
+
+#testimonials div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#testimonials section {
+    display: flex;
+    width: 225px;
+    padding: 5px 0;
+    line-height: 1.2;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#testimonials img {
+    width: 150px;
+    padding: 10px 0;
+}
+
+#testimonials q {
+    font-style: italic;
+}
+
+#testimonials q:before, #testimonials q:after {
+    content: '"';
+}
+
+/* about destination section */
+
+#about {
+    background-color: var(--blue);
+    margin-top: 20px;
+}
+
+#about h3 {
+    padding: 20px 0;
+}
+
+#about div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#about section {
+    width: 120px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+}
+
+#about p {
+    color: var(--dark-gray)
+}
+
+#about img {
+    width: 90%;
+    height: 90px;
+}
+
+/* contact us form */
+
+#contact {
+    padding: 20px 0 0 30px;
+}
+
+#contact h3 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.form-required {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.40em;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    color: var(--dark-gray);
+}
+
+.required {
+    color: var(--purple);
+    font-weight: normal;
+    font-size: 1.25em;
+    padding: 2px;
+}
+
+#contact label, #contact legend {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#contact input {
+    display: block;
+    width: 90%;
+    font-size: inherit;
+    font-family: inherit;
+    color: var(--dark-gray);
+    padding: 15px;
+    border: solid 3px var(--purple);
+    margin: 3px 0 20px 0;
+}
+
+#contact input::placeholder {
+    color: var(--dark-gray);
+}
+
+#nums fieldset label {
+    text-transform: none;
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+}
+
+/* radio styling */
+
+.radio-input {
+    color: var(--purple);
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+#contact input[type="radio"] {
+    appearance: none;
+    background-color: var(--white);
+    margin: 1em 1em 0.5em 0;
+    padding: 0;
+    color: var(--purple);
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
+    border: 3px solid var(--purple);
+    transform: translateY(-0.5em);
+    display: grid;
+    place-content: center;
+}
+
+#contact input[type="radio"]:hover {
+    cursor: pointer;
+}
+
+#contact input[type="radio"]::before {
+    content: "";
+    display: inline-block;
+    margin: 0;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.3s transform ease-in-out;
+    box-shadow: inset 2em 2em 2em 2em var(--purple);
+}
+
+#contact input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+/* select styling */
+
+.custom-select {
+    display: block;
+    position: relative;
+    width: 90%;
+    height: 3.5em;
+    color: var(--dark-gray);
+    border: solid 3px var(--purple);
+    margin: 3px 0 20px 0;
+    display: grid;
+    grid-template-areas: "select";
+}
+
+.custom-select, .custom-select:after {
+    grid-area: select;
+}
+
+.custom-select select {
+    position: relative;
+    top: -0.75em;
+    left: 1em;
+}
+
+.custom-select:hover {
+    cursor: pointer;
+}
+
+.custom-select:after {
+    content: "";
+    z-index: -1;
+    position: relative;
+    right: 1.5em;
+    top: 0.25em;
+    width: 1.75em;
+    height: 1.75em;
+    justify-self: end;
+    border: solid var(--purple);
+    border-width: 0 3px 3px 0;
+    border-radius: 7%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+/* submit styling */
+
+ #contact input[type="submit"] {
+    border: none;
+    height: 3.5em;
+    background-color: var(--purple);
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white);
+    transition: all 0.3s ease-in-out;
+}
+
+#contact input[type="submit"]:hover {
+    color: var(--black);
+    cursor: pointer;
+    background-color: var(--yellow);
+}
+
+/* footer styling */
+
+footer {
+    background-color: var(--light-gray);
+    line-height: 2;
+    text-align: center;
+}
+
+footer p, footer a {
+    font-size: 0.9em;
+}
+
+footer p {
+    padding: 1em 0;
+}
+
+footer a {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: var(--black);
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: var(--purple)
+}
+
+footer a:last-of-type {
+    padding-bottom: 1em;
+}
+
+/* beginning of media queries */
+
+/* medium screen styles */
+
+@media screen and (min-width: 650px) {
+    
+    /* universal changes */
+
+    h3 {
+        font-size: 2.5em;
+    }
+    
+    /* header styles */
+    
+    h1 {
+        font-size: 3em;
+        margin: 0 0 0.25em 2em;
+    }
+
+    header {
+        padding: 2em 2em 1em 2em;
+    }
+
+    header p {
+        font-size: 1.3em;
+        margin-right: 2em;
+    }
+
+    #logo img {
+        float: left;
+        width: 35%;
+        padding-bottom: 30px;
+    }
+
+    /* menu pt 2 */
+    
+    #menu-toggle {
+        position: relative;
+        width: 100%;
+    }
+    
+    #menu-toggle label, #menu-toggle input {
+        display: none;
+    }
+    
+    #menu-toggle a {
+        font-size: 0.90em;
+    }
+    
+    #menu-toggle a:hover {
+        color: var(--white)
+    }
+    
+    #menu-toggle ul {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        right: 0;
+        top: 0;
+        opacity: 100%;
+    }
+    
+    #menu-toggle li {
+        display: flex;
+        width: 20%;
+        margin: 0.5em;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--yellow);
+        height: 3em;
+        border: none;
+    }
+    
+    #menu-toggle li:last-of-type {
+        border-bottom: none;
+    }
+
+    /* main */
+
+    /* intro */
+
+    #intro {
+        margin: 4em 4em 1em 4em;
+    }
+
+    #intro h2 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    #intro p {
+        margin: 0;
+    }
+
+    #img-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        "photo1 photo2"
+        "photo3 photo3";
+        gap: 0.75em;
+        margin-bottom: 0;
+    }
+
+    #img-grid img{
+        width: 100%;
+        margin: 0;
+    }
+
+    #img-grid img[src="images/majorca-beach.png"]{
+        grid-area: photo1;
+    }
+
+    #img-grid picture {
+        grid-area: photo3;
+    }
+
+    #img-grid img[src="images/majorca-cove.png"] {
+        width: 100%;
+    }
+
+    /* plan section */
+
+    #plan {
+        padding: 1.5em 4em;
+    }
+
+    #plan h3 {
+        margin: 0;
+    }
+
+    #plan div {
+        margin: 1em 0 1em 0;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        gap: 1em;
+    }
+
+    #plan h4 {
+        font-size: 1.4em;
+    }
+
+    #plan section {
+        width: 100%;
+        height: 15em;
+        margin: 0;
+    }
+
+    /* testimonials section */
+
+    #testimonials {
+        margin: 1.5em 4em;
+    }
+
+    #testimonials h3 {
+        padding: 0;
+        margin: 0;
+    }
+
+    #testimonials div {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 50% 50%;
+        gap: 1em;
+    }
+
+    #testimonials section {
+        width: 100%;
+        line-height: 1.3;
+    }
+
+    #testimonials h4 {
+        font-size: 1.75em;
+    }
+
+    #testimonials p, #testimonials q {
+        font-size: 1.1em;
+    }
+
+    #testimonials img {
+        width: 200px;
+    }
+
+    /* about section */
+
+    #about {
+        padding: 1.5em 4em;
+    }
+
+    #about h3 {
+        padding: 0;
+        margin: 0 0 0.5em 0;
+    }
+
+    #about div {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        gap: 0.25em;
+    }
+
+    #about section {
+        width: 100%;
+    }
+
+    #about h4 {
+        font-size: 1.25em;
+    }
+
+    #about p {
+        font-size: 1.1em;
+    }
+
+    #about img {
+        margin-bottom: 0.25em;
+        height: 100px;
+    }
+
+    /* form styles */
+
+    #contact {
+        padding: 4em 4em 1em 4em;
+    }
+
+    #contact label, #contact legend {
+        font-size: 1.2em;
+    }
+
+    #contact input {
+        width: 100%;
+        padding: 20px;
+        font-size: 1.25em;
+    }
+
+    /* radio styling */
+
+    #nums fieldset {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    }
+    
+    #contact input[type="radio"] {
+        width: 3em;
+        height: 3em;
+    }
+
+    #contact input[type="radio"]::before {
+        width: 1.9em;
+        height: 1.9em;
+    }
+
+    /* select styling */
+
+    .custom-select {
+        width: 100%;
+        height: 3.5em;
+        font-size: 1.2em;
+    }
+
+    /* submit styling */
+
+    #contact input[type="submit"] {
+        width: 50%;
+        margin: 2em 0 0 50%;
+    }
+
+    /* footer styling */
+
+    footer {
+        padding: 1em 1.5em 1em 1.5em;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 1em;
+        justify-content: center;
+    }
+
+    footer p, footer a {
+        display: inline;
+        margin: 0;
+        padding: 0;
+    }
+
+    footer a:last-of-type {
+        padding: 0;
+    }
+
+}
+
+/* medium-large screen styles */
+
+@media screen and (min-width: 1080px) {
+    
+    /* header styles */
+
+    h1 {
+        margin: 0 0 0.25em 0;
+        padding-top: 0.5em;
+    }
+
+    header {
+        padding: 2em 0;
+    }
+
+    #logo img {
+        width: 250px;
+        margin: 0 -1em;
+    }
+
+    /* menu pt 3 */
+
+    #menu-toggle {
+        position: absolute;
+        top: 0;
+    }
+
+    #menu-toggle ul {
+        justify-content: end;
+    }
+
+    #menu-toggle li {
+        width: 130px;
+        height: 2.5em;
+        margin: 0 0.5em;
+    }
+
+    #menu-toggle li:last-of-type {
+        margin-right: 0;
+    }
+
+    /*main*/
+
+    /* plan section */
+
+    #plan {
+        padding: 5em 5em;
+    }
+
+    #plan h3 {
+        font-size: 2em;
+    }
+
+    #plan h4 {
+        margin: 0 0.25em;
+    }
+
+    #plan div {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+    }
+
+    #plan section {
+        height: 16em;
+    }
+
+    /*testimonials section*/
+
+    #testimonials {
+        margin: 4em 5em;
+    }
+
+    #testimonials h3 {
+        font-size: 2em;
+    }
+
+    #testimonials h4 {
+        font-size: 1.5em;
+    }
+
+    #testimonials img {
+        width: 175px;
+    }
+
+    /*about section */
+
+    #about {
+        padding: 4em 5em;
+    }
+
+    #about h3 {
+        font-size: 2em;
+    }
+
+    #about section {
+        padding-bottom: 0;
+    }
+
+    /* contact us form */
+
+    #contact {
+        margin: 4em 5em;
+    }
+
+    #contact h3 {
+        font-size: 2em;
+    }
+
+    /* footer */
+
+    footer {
+        padding: 1.5em 5em;
+        grid-template-columns: 4fr 1fr 1fr;
+        justify-content: right;
+    }
+
+    footer p{
+       text-align: left; 
+    }
+
+}
+
+/* Extra Large Screen Styles */
+
+@media screen and (min-width: 1250px) {
+
+    /* main */
+
+    /* intro */
+
+    #intro {
+        margin: 6em;
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        grid-template-areas: 
+        "text photos" ;
+        gap: 1.5em;
+    }
+
+    #intro h2, #intro p {
+        grid-area: text;
+    }
+
+    #intro p {
+        padding-top: 3em;
+    }
+
+    #img-grid img {
+        height: 17vw;
+        width: 100%;
+    }
+
+    #img-grid img[src="images/majorca-beach.png"]{
+        object-fit: none;
+        object-position: 75% 75%;
+    }
+
+    #img-grid img[src="images/majorca-waves.png"]{
+        object-fit: none;
+        object-position: 0% 80%;
+    }
+
+    #img-grid img[src="images/majorca-cove.png"] {
+        grid-area: photo3;
+        margin-top: 0;
+    }
+
+    /* plan section */
+
+    #plan {
+        padding: 6em;
+    }
+
+    /* testimonials section */
+
+    #testimonials {
+        margin: 6em;
+    }
+
+    #testimonials div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /* about section */
+
+    #about {
+        padding: 6em;
+    }
+
+    #about div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #about section {
+        width: 200px;
+        padding: 0;
+        display: inline-flex;
+    }
+
+}
+
+@media screen and (min-width: 1490px) {
+    #contact {
+        margin: 6em;
+    }
+
+    #contact label, #contact legend, #custom-select {
+        font-size: 1.05em;
+    }
+
+    .custom-select {
+        height: 3.55em;
+    }
+
+    #contact form {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1em;
+    }
+
+    /* those radios that i love. again. */
+
+    #contact input[type="radio"] {
+        width: 3em;
+        height: 3em;
+        margin: 0.75em 0.15em;
+        transform: translateY(-.025em);
+    }
+
+    #contact input[type="radio"]::before {
+        width: 1.8em;
+        height: 1.8em;
+    }
+}
